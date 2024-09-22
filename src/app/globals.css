@@ -2,31 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
 body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* globals.css */
 body.day-mode {
   background-color: #f0f0f0;
-  /* color: #333; */
 }
 
 body.night-mode {
-  /* background-color: #222831; */
-  /* color: #eeeeee; */
   background: #222831;
 }
 

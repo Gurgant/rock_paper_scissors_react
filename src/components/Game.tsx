@@ -10,15 +10,21 @@ const imageSources: Record<
   { src: string; alt: string }
 > = {
   Rock: {
-    src: "/images/resize_images/rock.png",
+    src: `${
+      process.env.NODE_ENV === "production" ? "/rock_paper_scissors_react" : ""
+    }/images/resize_images/rock.png`,
     alt: "rock",
   },
   Paper: {
-    src: "/images/resize_images/paper.png",
+    src: `${
+      process.env.NODE_ENV === "production" ? "/rock_paper_scissors_react" : ""
+    }/images/resize_images/paper.png`,
     alt: "paper",
   },
   Scissors: {
-    src: "/images/resize_images/scissors.png",
+    src: `${
+      process.env.NODE_ENV === "production" ? "/rock_paper_scissors_react" : ""
+    }/images/resize_images/scissors.png`,
     alt: "scissors",
   },
 };

@@ -6,7 +6,7 @@ import ToggleSwitch from "@/components/ToggleSwitch";
 import Game from "@/components/Game";
 
 export default function Home() {
-  const [mode, setMode] = useState<"day" | "night">("day");
+  const [mode, setMode] = useState<"day" | "night">("night");
 
   const handleToggle = () => {
     setMode((prevMode) => {
@@ -19,7 +19,9 @@ export default function Home() {
 
   return (
     <div className="container mx-auto p-6">
-      <ToggleSwitch mode={mode} onToggle={handleToggle} />
+      <div className="absolute top-4 right-4">
+        <ToggleSwitch mode={mode} onToggle={handleToggle} />
+      </div>
       <Game mode={mode} />
     </div>
   );

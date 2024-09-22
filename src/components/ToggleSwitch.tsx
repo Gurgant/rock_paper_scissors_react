@@ -36,7 +36,11 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ mode, onToggle }) => {
         } z-20`}
       >
         <Image
-          src="/images/sun.png"
+          src={`${
+            process.env.NODE_ENV === "production"
+              ? "/rock_paper_scissors_react"
+              : ""
+          }/images/sun.png`}
           alt="sun"
           width={60}
           height={60}
@@ -54,7 +58,11 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ mode, onToggle }) => {
         } z-20`}
       >
         <Image
-          src="/images/moon.png"
+          src={`${
+            process.env.NODE_ENV === "production"
+              ? "/rock_paper_scissors_react"
+              : ""
+          }/images/moon.png`}
           alt="moon"
           width={60}
           height={60}
