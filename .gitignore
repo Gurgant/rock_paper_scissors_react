@@ -12,6 +12,7 @@
 # next.js
 /.next/
 /out/
+/dist/
 
 # production
 /build
@@ -19,6 +20,7 @@
 # misc
 .DS_Store
 *.pem
+Thumbs.db  # Windows specific
 
 # debug
 npm-debug.log*
@@ -27,6 +29,9 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env*.development
+.env*.production
+.env*.test
 
 # vercel
 .vercel
@@ -34,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDE settings
+.vscode/
+.idea/
+
+# logs
+*.log

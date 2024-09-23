@@ -2,6 +2,10 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import getConfig from "next/config";
+
+const { publicRuntimeConfig } = getConfig(); // Extract basePath
+const basePath = publicRuntimeConfig?.basePath || ""; // Set basePath
 
 const choices = ["Rock", "Paper", "Scissors"] as const;
 
@@ -10,21 +14,15 @@ const imageSources: Record<
   { src: string; alt: string }
 > = {
   Rock: {
-    src: `${
-      process.env.NODE_ENV === "production" ? "/rock_paper_scissors_react" : ""
-    }/images/resize_images/rock.png`,
+    src: `${basePath}/images/resize_images/rock.png`,
     alt: "rock",
   },
   Paper: {
-    src: `${
-      process.env.NODE_ENV === "production" ? "/rock_paper_scissors_react" : ""
-    }/images/resize_images/paper.png`,
+    src: `${basePath}/images/resize_images/paper.png`,
     alt: "paper",
   },
   Scissors: {
-    src: `${
-      process.env.NODE_ENV === "production" ? "/rock_paper_scissors_react" : ""
-    }/images/resize_images/scissors.png`,
+    src: `${basePath}/images/resize_images/scissors.png`,
     alt: "scissors",
   },
 };

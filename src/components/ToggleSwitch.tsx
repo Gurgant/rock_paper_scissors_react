@@ -1,13 +1,19 @@
 "use client";
 
 import Image from "next/image";
+import getConfig from "next/config";
 
 interface ToggleSwitchProps {
   mode: "day" | "night";
   onToggle: () => void;
 }
 
+// Get basePath from publicRuntimeConfig
+const { publicRuntimeConfig } = getConfig();
+
 const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ mode, onToggle }) => {
+  const basePath = publicRuntimeConfig?.basePath || "";
+
   return (
     <label className="relative inline-block w-32 h-16">
       <div
@@ -36,11 +42,7 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ mode, onToggle }) => {
         } z-20`}
       >
         <Image
-          src={`${
-            process.env.NODE_ENV === "production"
-              ? "/rock_paper_scissors_react"
-              : ""
-          }/images/sun.png`}
+          src={`${basePath}/images/sun.png`}
           alt="sun"
           width={60}
           height={60}
@@ -58,11 +60,7 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ mode, onToggle }) => {
         } z-20`}
       >
         <Image
-          src={`${
-            process.env.NODE_ENV === "production"
-              ? "/rock_paper_scissors_react"
-              : ""
-          }/images/moon.png`}
+          src={`${basePath}/images/moon.png`}
           alt="moon"
           width={60}
           height={60}
