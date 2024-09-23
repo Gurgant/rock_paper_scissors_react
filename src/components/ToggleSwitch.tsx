@@ -8,11 +8,10 @@ interface ToggleSwitchProps {
   onToggle: () => void;
 }
 
-// Get basePath from publicRuntimeConfig
-const { publicRuntimeConfig } = getConfig();
+const { publicRuntimeConfig = {} } = getConfig() || {}; // Extract basePath
 
 const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ mode, onToggle }) => {
-  const basePath = publicRuntimeConfig?.basePath || "";
+  const basePath = publicRuntimeConfig.basePath || ""; // Set basePath or empty string if not provided
 
   return (
     <label className="relative inline-block w-32 h-16">

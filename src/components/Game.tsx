@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import getConfig from "next/config";
 
-const { publicRuntimeConfig } = getConfig(); // Extract basePath
-const basePath = publicRuntimeConfig?.basePath || ""; // Set basePath
+const { publicRuntimeConfig = {} } = getConfig() || {}; // Extract basePath
+const basePath = publicRuntimeConfig.basePath || ""; // Set basePath or empty string if not provided
 
 const choices = ["Rock", "Paper", "Scissors"] as const;
 
